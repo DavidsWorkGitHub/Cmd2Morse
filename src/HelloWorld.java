@@ -1,51 +1,31 @@
-public class HelloWorld{
+import java.util.Random;
+import translators.MorseTranslator;
+import translators.Translator;
 
-    public static void main(String[] args) {
+import java.io.FileNotFoundException;
 
-        String[] text = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
-                        "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+public class HelloWorld {
 
-        String morse[] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--",
-                        "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..",
-                        "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----."};
+    private HelloWorld(String arg) throws FileNotFoundException {
 
-        CharacterMorseCode[] arrayOfChars = new CharacterMorseCode[text.length];
+        Translator a = new MorseTranslator();
 
-        for (int i = 0; i < text.length; i++) {
+        Random rand = new Random();
+        int value = rand.nextInt(arg.length());
 
-            arrayOfChars[i] = new CharacterMorseCode(text[i], morse[i]);
+        System.out.println("The text to be translated into Morse Code: " + a.getSourceText(arg));
+        System.out.println("The text translated into Morse Code: " + a.translate(arg));
+        System.out.println("The character at index " + value + " is " + value + ": " + a.getTranslatedCharacterAt(value));
 
-        }
-
-        System.out.println("You entered " + args[0] + ".\n");
-        System.out.println("**********\nTranslated\n**********");
-        translateCharsToMorse(args[0], arrayOfChars);
-
-        //System.out.println(array[(translateCharsToMorse(args[0], array))].character + " = " +
-        //                      array[(translateCharsToMorse(args[0], array))].morseCode);
     }
 
-    /**
-     * Method to translate the text input in terminal into morse code.
-     * @param args A string containing the text entered in terminal.
-     * @param arrayOfTranslations An array containing the characters, and their retrospective morse code.
-     */
-    private static void translateCharsToMorse(String args, CharacterMorseCode[] arrayOfTranslations) {
+    public static void main(String[] args){
 
-        // Loop through each iteration of the terminal text.
-        for (int i = 0; i < args.length(); i++) {
-
-            String current = String.valueOf(args.charAt(i));
-
-            // Loop through the array of characters to find the translated morse code.
-            for (CharacterMorseCode arrayOfTranslation : arrayOfTranslations) {
-
-                if (current.equalsIgnoreCase(arrayOfTranslation.character)) {
-
-                    System.out.println(arrayOfTranslation.character + " = " + arrayOfTranslation.morseCode);
-
-                }
-            }
+        try {
+            new HelloWorld(args[0]);
+        } catch (FileNotFoundException e) {
+            // Prints stack trace if new instance of class unreachable.
+            e.printStackTrace();
         }
     }
 }
