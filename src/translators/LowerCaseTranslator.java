@@ -1,7 +1,7 @@
 package translators;
 
 /**
- * Method to .......
+ * Class to convert a string into lower case
  * Author: Dane Griffiths
  * Date created: 02/09/16.
  */

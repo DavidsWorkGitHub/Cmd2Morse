@@ -1,7 +1,7 @@
 package translators;
 
 /**
- * Class to convert a string into UpperCase
+ * Class to convert a string into upper case
  * Author: Dane Griffiths
  * Date created: 02/09/16.
  */
