@@ -1,4 +1,5 @@
 package translators;
+
 /**
  * Class to translate the a String of data into Morse Code
  * Author: Dane Griffiths

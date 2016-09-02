@@ -27,6 +27,6 @@ public interface Translator {
      * @throws IndexOutOfBoundsException if the index is greater than the length
      * of the string or less than 0
      */
-    public String getTranslatedCharacterAt( int index ) throws IndexOutOfBoundsException;
+    public String getTranslatedCharacterAt(int index ) throws IndexOutOfBoundsException;
 
 }
