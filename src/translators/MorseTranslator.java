@@ -1,5 +1,4 @@
 package translators;
-
 /**
  * Class to translate the a String of data into Morse Code
  * Author: Dane Griffiths
@@ -7,7 +6,9 @@ package translators;
  */
 public class MorseTranslator implements Translator {
 
+    private String sourceText;
     private CharacterMorseCode arrayOfChars1 = new CharacterMorseCode();
+
     /**
      * Translate a string of text into Morse Code
      * @param source the string to translate
@@ -15,17 +16,19 @@ public class MorseTranslator implements Translator {
      */
     public String translate(String source) {
 
-
+        this.sourceText = source;
         String translatedMorseCode = "";
 
+        // loop through the source string
         for (int i = 0; i < source.length(); i++) {
 
             char current = source.toUpperCase().charAt(i);
 
+            // loop through the entire array of characters to find the source character
             for (int j = 0; j < arrayOfChars1.getArrayLength(); j++) {
 
                 if (translatedMorseCode.isEmpty() && current == arrayOfChars1.getCharacter(j)) {
-                    translatedMorseCode = translatedMorseCode + arrayOfChars1.getMorseCode(j);
+                    translatedMorseCode = arrayOfChars1.getMorseCode(j);
 
                 } else if (current == arrayOfChars1.getCharacter(j)) {
                     translatedMorseCode = translatedMorseCode + " " + arrayOfChars1.getMorseCode(j);
@@ -35,13 +38,23 @@ public class MorseTranslator implements Translator {
         return translatedMorseCode;
     }
 
-    public String getSourceText(String args) {
+    /**
+     * Get the original untranslated string
+     * @return the original String
+     */
+    public String getSourceText() {
 
-        return args;
+        return sourceText;
     }
 
+    /**
+     * Get a character at an index in the translated string
+     * @param index the index of the character to retrieve
+     * @return the translated character
+     * @throws IndexOutOfBoundsException
+     */
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
-        return arrayOfChars1.getMorseCode(index);
+        return arrayOfChars1.CharacterMorseCodeReturned(getSourceText().charAt(index));
     }
 }

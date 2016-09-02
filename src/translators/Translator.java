@@ -18,7 +18,7 @@ public interface Translator {
      * Get the original untranslated string
      * @return the original String
      */
-    public String getSourceText( String args );
+    public String getSourceText(  );
 
     /**
      * Get a character at an index in the translated string

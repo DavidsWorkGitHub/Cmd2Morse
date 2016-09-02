@@ -15,17 +15,22 @@ public class CharacterMorseCode {
                                 "-.--", "--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...",
                                 "---..", "----."};
 
-    public String CharacterMorseCodeReturned( char alpha ) {
+    /**
+     * Get teh morse code of a particular character
+     * @param alpha the character to lookup
+     * @return string of morse code, translated from the character
+     */
+    String CharacterMorseCodeReturned(char alpha) {
 
         if (Character.isLowerCase(alpha)) {
             alpha = Character.toUpperCase(alpha);
         }
 
         for (int i = 0; i < character.length-1; i++) {
+
             if (alpha == character[i])
                 return morseCode[i];
-
-            }
+        }
         return "";
     }
 
@@ -33,7 +38,7 @@ public class CharacterMorseCode {
      * Get the length of the array
      * @return an integer to indicate length of array
      */
-    public int getArrayLength() {
+    int getArrayLength() {
         return character.length;
     }
 
@@ -42,7 +47,7 @@ public class CharacterMorseCode {
      * @param i the index in the array
      * @return the character at the index point
      */
-    public char getCharacter(int i) {
+    char getCharacter(int i) {
         return character[i];
     }
 
@@ -51,7 +56,7 @@ public class CharacterMorseCode {
      * @param i the index in the array
      * @return the string of morse code at the index point
      */
-    public String getMorseCode(int i) {
+    String getMorseCode(int i) {
         return morseCode[i];
     }
 }
