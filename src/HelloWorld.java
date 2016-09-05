@@ -1,5 +1,4 @@
 import translators.*;
-
 import java.io.FileNotFoundException;
 import java.util.EnumSet;
 import java.util.Scanner;
@@ -22,9 +21,9 @@ public class HelloWorld {
         }
         String inputTranslator = terminalInput.nextLine();
 
-        Translator z = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
-        System.out.printf("\nYour entry %s, translated by %s is %s\n\n", inputText, inputTranslator,z.translate(inputText));
-        System.out.printf("The %s translation for character %s is %s",inputTranslator, inputIndex, z.getTranslatedCharacterAt(inputIndex) + "\n");
+        Translator a = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
+        System.out.printf("\nYour entry %s, translated by %s is %s\n\n", inputText, inputTranslator,a.translate(inputText));
+        System.out.printf("The %s translation for character %s is %s",inputTranslator, inputIndex, a.getTranslatedCharacterAt(inputIndex) + "\n");
 
     }
 
