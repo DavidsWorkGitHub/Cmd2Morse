@@ -97,6 +97,7 @@ public class NumberTranslator implements Translator {
     @Override
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
+
             String returnedString = "";
             // loop through the source text  string
             for (int i = 0; i < sourceText.length(); i++) {
@@ -108,4 +109,8 @@ public class NumberTranslator implements Translator {
             }
             return returnedString;
         }
-}
+
+
+    }
+
+
