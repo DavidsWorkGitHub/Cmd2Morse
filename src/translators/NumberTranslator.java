@@ -16,63 +16,9 @@ public class NumberTranslator implements Translator {
     @Override
     public String translate(String source) {
         this.sourceText = source;
-        String translatedNumber = "";
-        for (int i = 0; i < source.length(); i++) {
+        ConvertTextToNumber x = new ConvertTextToNumber();
 
-            char current = source.charAt(i);
-
-
-            switch (current) {
-                case '1':
-                    translatedNumber = translatedNumber + " One ";
-
-                    break;
-                case '2':
-                    translatedNumber = translatedNumber + " Two ";
-
-                    break;
-                case '3':
-                    translatedNumber = translatedNumber + " Three ";
-
-                    break;
-                case '4':
-                    translatedNumber = translatedNumber + " Four ";
-
-                    break;
-                case '5':
-                    translatedNumber = translatedNumber + " Five ";
-
-                    break;
-                case '6':
-                    translatedNumber = translatedNumber + " Six ";
-
-                    break;
-                case '7':
-                    translatedNumber = translatedNumber + " Seven ";
-
-                    break;
-                case '8':
-                    translatedNumber = translatedNumber + " Eight ";
-
-                    break;
-                case '9':
-                    translatedNumber = translatedNumber + " Nine ";
-
-                    break;
-                case '0':
-                    translatedNumber = translatedNumber + " Zero ";
-
-                    break;
-
-                default:
-                    translatedNumber = translatedNumber + current;
-                    break;
-
-            }
-
-        }
-
-        return translatedNumber;
+        return x.convertTextToNumber(source);
     }
 
     /**
