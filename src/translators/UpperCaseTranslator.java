@@ -24,10 +24,10 @@ public class UpperCaseTranslator implements Translator {
         for (int i = 0; i < source.length(); i++) {
 
             if (translatedMorseCode.isEmpty()) {
-                translatedMorseCode = source.substring(i, i + 1).toUpperCase();
+                translatedMorseCode = source.substring(i, i+1).toUpperCase();
 
             } else {
-                translatedMorseCode = translatedMorseCode + source.substring(i, i + 1).toUpperCase();
+                translatedMorseCode = translatedMorseCode + " " + source.substring(i, i + 1).toUpperCase();
             }
 
         }
@@ -53,14 +53,15 @@ public class UpperCaseTranslator implements Translator {
     @Override
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
+        String returnedString = "";
         // loop through the source text  string
         for (int i = 0; i < sourceText.length(); i++) {
 
             if (index == i) {
 
-                return String.valueOf(sourceText.toUpperCase().charAt(i));
+                returnedString = String.valueOf(sourceText.toUpperCase().charAt(i));
             }
         }
-        return "";
+        return returnedString;
     }
 }

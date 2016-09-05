@@ -27,7 +27,7 @@ public class LowerCaseTranslator implements Translator{
                 translatedMorseCode = source.substring(i, i+1).toLowerCase();
 
             } else {
-                translatedMorseCode = translatedMorseCode + source.substring(i, i+1).toLowerCase();
+                translatedMorseCode = translatedMorseCode + " " + source.substring(i, i+1).toLowerCase();
             }
         }
         return translatedMorseCode;
@@ -52,14 +52,15 @@ public class LowerCaseTranslator implements Translator{
     @Override
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
+        String returnedString = "";
         // loop through the source text  string
         for (int i = 0; i < sourceText.length(); i++) {
 
             if (index == i) {
 
-                return String.valueOf(sourceText.toLowerCase().charAt(i));
+                returnedString = String.valueOf(sourceText.toLowerCase().charAt(i));
             }
         }
-        return "";
+        return returnedString;
     }
 }
