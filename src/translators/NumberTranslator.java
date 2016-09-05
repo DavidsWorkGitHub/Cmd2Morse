@@ -1,7 +1,9 @@
 package translators;
 
 /**
- * Created by david on 02/09/16.
+ * Author: david powell
+ * Updated by Dane Griffiths
+ * Created on 02/09/16.
  */
 public class NumberTranslator implements Translator {
 

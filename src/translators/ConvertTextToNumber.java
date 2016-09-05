@@ -2,7 +2,8 @@ package translators;
 
 /**
  * Method to .......
- * Author: Dane Griffiths
+ * Author: david powell
+ * Updated by Dane Griffiths
  * Date created: 05/09/16.
  */
 public class ConvertTextToNumber {
