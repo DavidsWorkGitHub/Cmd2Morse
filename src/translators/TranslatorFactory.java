@@ -7,7 +7,7 @@ package translators;
  */
 public class TranslatorFactory {
 
-    public enum TranslatorSelect {MORSE,UPPERCASE,LOWERCASE}
+    public enum TranslatorSelect {MORSE,UPPERCASE,LOWERCASE,NUMBER}
 
     /**
      * Method to turn the users choice into the relevant translator.
@@ -28,6 +28,9 @@ public class TranslatorFactory {
 
             case LOWERCASE:
                 return new LowerCaseTranslator();
+
+            case NUMBER:
+                return new NumberTranslator();
 
             default:
                 return null;
