@@ -29,7 +29,6 @@ public class UpperCaseTranslator implements Translator {
             } else {
                 translatedMorseCode = translatedMorseCode + " " + source.substring(i, i + 1).toUpperCase();
             }
-
         }
         return translatedMorseCode;
     }
@@ -38,6 +37,7 @@ public class UpperCaseTranslator implements Translator {
      * Get the original untranslated string
      * @return the original String
      */
+
     @Override
     public String getSourceText() {
         return sourceText;
@@ -50,6 +50,7 @@ public class UpperCaseTranslator implements Translator {
      * @throws IndexOutOfBoundsException if the index is greater than the length
      * of the string or less than 0
      */
+
     @Override
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
