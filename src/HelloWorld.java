@@ -1,5 +1,6 @@
 import translators.CharacterMorseCode;
 import translators.MorseTranslator;
+import translators.NumberTranslator;
 import translators.Translator;
 import java.io.FileNotFoundException;
 
@@ -15,6 +16,10 @@ public class HelloWorld {
         System.out.println("The text translated into Morse Code: " + a.translate(arg1));
         System.out.println("The morse code for character " + arg2 + ": " + a.getTranslatedCharacterAt(parsedIndex));
 
+        Translator b = new NumberTranslator();
+        System.out.println("The text to be translated from letters and numbers into a string of letters and words for the numbers  : " + arg1);
+        System.out.println("The text translated into letters and words for the numbers: " + b.translate(arg1));
+       System.out.println("The morse code for character " +  arg2 +  ": " + a.getTranslatedCharacterAt(parsedIndex));
     }
 
     public static void main(String[] args){

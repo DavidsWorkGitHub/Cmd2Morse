@@ -14,7 +14,6 @@ public class CharacterMorseCode {
                                 "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-",
                                 "-.--", "--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...",
                                 "---..", "----."};
-
     /**
      * Get teh morse code of a particular character
      * @param alpha the character to lookup
