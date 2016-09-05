@@ -9,16 +9,6 @@ public class HelloWorld {
 
         Scanner terminalInput = new Scanner(System.in);
 
-
-        Translator d = new NumberTranslator();
-        System.out.println("The text to be translated from letters and numbers into a string of letters and words for the numbers  : " + arg1);
-        System.out.println("The text translated into letters and words for the numbers: " + d.translate(arg1));
-
-        System.out.println("The morse code for character " +  arg2 +  ": " + d.getTranslatedCharacterAt(parsedIndex) + "\n");
-
-        System.out.println("The morse code for character " +  arg2 +  ": " + c.getTranslatedCharacterAt(parsedIndex) + "\n");
-
-
         System.out.println("\nPlease enter the characters to be translated: ");
         String inputText = terminalInput.nextLine();
 
