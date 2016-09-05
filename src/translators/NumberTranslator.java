@@ -22,8 +22,6 @@ public class NumberTranslator implements Translator {
             char current = source.charAt(i);
 
 
-
-
             switch (current) {
                 case '1':
                     translatedNumber = translatedNumber + " One ";
@@ -95,8 +93,19 @@ public class NumberTranslator implements Translator {
      * @throws IndexOutOfBoundsException if the index is greater than the length
      *                                   of the string or less than 0
      */
+
     @Override
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
-        return null;
-    }
+
+            String returnedString = "";
+            // loop through the source text  string
+            for (int i = 0; i < sourceText.length(); i++) {
+
+                if (index == i) {
+
+                    returnedString = String.valueOf(sourceText.charAt(i));
+                }
+            }
+            return returnedString;
+        }
 }

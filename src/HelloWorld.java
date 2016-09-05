@@ -28,7 +28,7 @@ public class HelloWorld {
         Translator d = new NumberTranslator();
         System.out.println("The text to be translated from letters and numbers into a string of letters and words for the numbers  : " + arg1);
         System.out.println("The text translated into letters and words for the numbers: " + d.translate(arg1));
-        System.out.println("The morse code for character " +  arg2 +  ": " + d.getTranslatedCharacterAt(parsedIndex));
+        System.out.println("The morse code for character " +  arg2 +  ": " + d.getTranslatedCharacterAt(parsedIndex) + "\n");
 
 
 
@@ -41,10 +41,10 @@ public class HelloWorld {
         System.out.println("Please enter the type of translator you wish to use: ");
         String inputTranslator = s.nextLine();
 
-        Translator z = new TranslatorFactory().getTranslatorFactory(inputTranslator);
-        System.out.println("\nThe text to be translated to lower case: " + inputText);
-        System.out.println("The translated text to lower case: " + z.translate(inputText));
-        System.out.println("The lower case for character " + inputIndex + ": " + z.getTranslatedCharacterAt(inputIndex) + "\n");
+//        Translator z = new TranslatorFactory().getTranslatorFactory(inputTranslator);
+//        System.out.println("\nThe text to be translated to lower case: " + inputText);
+//        System.out.println("The translated text to lower case: " + z.translate(inputText));
+//        System.out.println("The lower case for character " + inputIndex + ": " + z.getTranslatedCharacterAt(inputIndex) + "\n");
 
 
     }
