@@ -10,7 +10,6 @@ public class HelloWorld {
         int parsedIndex = Integer.parseInt(arg2);
 
         Translator a = new MorseTranslator();
-
         System.out.println("The text to be translated into Morse Code: " + arg1);
         System.out.println("Thadsfasdf: " + a.getSourceText());
         System.out.println("The translated text to Morse Code: " + a.translate(arg1));
@@ -26,6 +25,13 @@ public class HelloWorld {
         System.out.println("The translated text to lower case: " + c.translate(arg1));
         System.out.println("The lower case for character " + arg2 + ": " + c.getTranslatedCharacterAt(parsedIndex) + "\n");
 
+        Translator d = new NumberTranslator();
+        System.out.println("The text to be translated from letters and numbers into a string of letters and words for the numbers  : " + arg1);
+        System.out.println("The text translated into letters and words for the numbers: " + d.translate(arg1));
+        System.out.println("The morse code for character " +  arg2 +  ": " + d.getTranslatedCharacterAt(parsedIndex));
+
+
+
         Scanner s = new Scanner(System.in);
 
         System.out.println("Please enter the characters to be translated: ");
@@ -39,6 +45,7 @@ public class HelloWorld {
         System.out.println("\nThe text to be translated to lower case: " + inputText);
         System.out.println("The translated text to lower case: " + z.translate(inputText));
         System.out.println("The lower case for character " + inputIndex + ": " + z.getTranslatedCharacterAt(inputIndex) + "\n");
+
 
     }
 

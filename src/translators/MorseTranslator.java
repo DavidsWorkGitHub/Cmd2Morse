@@ -39,7 +39,7 @@ public class MorseTranslator implements Translator {
         return translatedMorseCode;
     }
 
-    /**
+  /**
      * Get the original untranslated string
      * @return the original String
      */
