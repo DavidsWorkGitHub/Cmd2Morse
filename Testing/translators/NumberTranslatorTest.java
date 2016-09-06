@@ -39,7 +39,7 @@ public class NumberTranslatorTest {
         d.translate(text);
 
         int index = 3;
-        assertEquals("1" , d.getTranslatedCharacterAt(index));
+        assertEquals("c" , d.getTranslatedCharacterAt(index));
     }
 
 }
