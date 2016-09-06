@@ -45,14 +45,25 @@ public class NumberTranslator implements Translator {
     @Override
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
-
+            String newNumber = "";
             String returnedString = "";
             // loop through the source text  string
             for (int i = 0; i < sourceText.length(); i++) {
 
-                if (index == i) {
+                if (index == i+1) {
+                    if ( i == 1){
+                        newNumber = " One ";
 
-                    returnedString = String.valueOf(sourceText.charAt(i));
+                    }
+                    else if ( i == 2){
+                        newNumber = " TWO ";
+                    }
+                    else if ( i == 3){
+                        newNumber = " Three ";
+                    }
+                    else {
+                    }
+                    returnedString = (String.valueOf(sourceText.charAt(i)+ newNumber ));
                 }
             }
             return returnedString;

@@ -48,7 +48,7 @@ public class ConvertTextToNumber {
                     translatedNumber = translatedNumber + " Zero ";
                     break;
                 default:
-                    translatedNumber = translatedNumber + source;
+                    translatedNumber = translatedNumber + x;
                     break;
             }
         }
