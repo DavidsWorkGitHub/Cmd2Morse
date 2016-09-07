@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HelloWorld {
 
-    private HelloWorld() throws FileNotFoundException {
+    public HelloWorld() throws FileNotFoundException {
 
         Scanner terminalInput = new Scanner(System.in);
 
@@ -21,7 +21,6 @@ public class HelloWorld {
             System.out.print(info + " - ");
         }
         String inputTranslator = terminalInput.nextLine();
-
         Translator a = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
         System.out.printf("\nYour entry %s, translated by %s is %s\n\n", inputText, inputTranslator,a.translate(inputText));
         System.out.printf("The %s translation for character %s is %s",inputTranslator, inputIndex, a.getTranslatedCharacterAt(inputIndex) + "\n");

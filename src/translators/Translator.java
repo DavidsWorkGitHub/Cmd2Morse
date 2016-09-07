@@ -12,13 +12,13 @@ public interface Translator {
      * @param source the string to translate
      * @return a translated string
      */
-    public String translate( String source );
+    String translate(String source);
 
     /**
      * Get the original untranslated string
      * @return the original String
      */
-    public String getSourceText(  );
+    String getSourceText();
 
     /**
      * Get a character at an index in the translated string
@@ -27,6 +27,6 @@ public interface Translator {
      * @throws IndexOutOfBoundsException if the index is greater than the length
      * of the string or less than 0
      */
-    public String getTranslatedCharacterAt(int index ) throws IndexOutOfBoundsException;
+    String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException;
 
 }
