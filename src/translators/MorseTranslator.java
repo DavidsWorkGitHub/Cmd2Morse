@@ -12,6 +12,7 @@ public class MorseTranslator implements Translator {
 
     /**
      * Translate a string of text into Morse Code
+     *
      * @param source the string to translate
      * @return the translated string
      */
@@ -39,8 +40,9 @@ public class MorseTranslator implements Translator {
         return translatedMorseCode;
     }
 
-  /**
+    /**
      * Get the original untranslated string
+     *
      * @return the original String
      */
     public String getSourceText() {
@@ -50,12 +52,22 @@ public class MorseTranslator implements Translator {
 
     /**
      * Get a character at an index in the translated string
+     *
      * @param index the index of the character to retrieve
      * @return the translated character
      * @throws IndexOutOfBoundsException
      */
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
-        return arrayOfChars1.CharacterMorseCodeReturned(getSourceText().charAt(index));
+        String a = "";
+        for (int i = 0; i < arrayOfChars1.getArrayLength(); i++) {
+
+            if (getSourceText().charAt(index) == arrayOfChars1.getCharacter(index)) {
+                a = arrayOfChars1.CharacterMorseCodeReturned(getSourceText().charAt(index));
+            } else {
+                a = "untranslateable";
+            }
+        }
+        return a;
     }
 }

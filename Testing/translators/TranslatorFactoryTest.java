@@ -1,9 +1,6 @@
 package translators;
 import org.junit.Test;
-
 import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -16,40 +13,45 @@ public class TranslatorFactoryTest {
     @Test
     public void testMorse() {
 
+        TranslatorFactory tF = TranslatorFactory.getInstance();
         String inputTranslator = "MORSE";
-        Translator a = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
+        Translator a = tF.getTranslatorFactory((TranslatorFactory.TranslatorSelect.valueOf(inputTranslator)));
         assertThat(a, instanceOf(MorseTranslator.class));
     }
 
     @Test
     public void testUpperCase() {
 
+        TranslatorFactory tF = TranslatorFactory.getInstance();
         String inputTranslator = "UPPERCASE";
-        Translator a = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
+        Translator a = tF.getTranslatorFactory((TranslatorFactory.TranslatorSelect.valueOf(inputTranslator)));
         assertThat(a, instanceOf(UpperCaseTranslator.class));
     }
 
     @Test
     public void testLowerCase() {
 
+        TranslatorFactory tF = TranslatorFactory.getInstance();
         String inputTranslator = "LOWERCASE";
-        Translator a = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
+        Translator a = tF.getTranslatorFactory((TranslatorFactory.TranslatorSelect.valueOf(inputTranslator)));
         assertThat(a, instanceOf(LowerCaseTranslator.class));
     }
 
     @Test
     public void testNumber() {
 
+        TranslatorFactory tF = TranslatorFactory.getInstance();
         String inputTranslator = "NUMBER";
-        Translator a = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
+        Translator a = tF.getTranslatorFactory((TranslatorFactory.TranslatorSelect.valueOf(inputTranslator)));
         assertThat(a, instanceOf(NumberTranslator.class));
     }
 
 //    @Test
 //    public void testNull() {
 //
+//        TranslatorFactory tF = TranslatorFactory.getInstance();
 //        String inputTranslator = "";
-//        Translator a = new TranslatorFactory().getTranslatorFactory(TranslatorFactory.TranslatorSelect.valueOf(inputTranslator));
+//        Translator a = tF.getTranslatorFactory((TranslatorFactory.TranslatorSelect.valueOf(inputTranslator)));
 //        assertThat(a.getClass(), is(null));
 //    }
 }

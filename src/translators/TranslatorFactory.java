@@ -7,24 +7,41 @@ package translators;
  */
 public class TranslatorFactory {
 
+    private static TranslatorFactory theFactory;
+
+    static {
+        theFactory = new TranslatorFactory();
+    }
+
+    private TranslatorFactory() {
+
+    }
+
+    public static TranslatorFactory getInstance() {
+
+        if (theFactory == null)
+            theFactory = new TranslatorFactory();
+
+        return theFactory;
+    }
+
     public enum TranslatorSelect {MORSE,UPPERCASE,LOWERCASE,NUMBER}
 
     /**
      * Method to turn the users choice into the relevant translator.
-     * @param option
-     * @return
+     * @param option an entry to specify which translator to use
+     * @return a new specific translator, based on the entry of the user
      */
     public Translator getTranslatorFactory(TranslatorSelect option) {
 
         switch (option) {
 
             case MORSE:
-                return new MorseTranslator();
 
+                return new MorseTranslator();
 
             case UPPERCASE:
                 return new UpperCaseTranslator();
-
 
             case LOWERCASE:
                 return new LowerCaseTranslator();
@@ -34,7 +51,24 @@ public class TranslatorFactory {
 
             default:
                 return null;
-
         }
+    }
+
+    /**
+     * Method to get all of the enums the customers can use
+     * @return a string containing all of the enums available
+     */
+    public String getEnumsContent() {
+
+        String stringOfEnums = "";
+        for (TranslatorSelect info : TranslatorSelect.values()) {
+
+            if (stringOfEnums.isEmpty()){
+                stringOfEnums = stringOfEnums + info;
+            } else {
+                stringOfEnums = stringOfEnums + " - " + info;
+            }
+        }
+        return stringOfEnums;
     }
 }
