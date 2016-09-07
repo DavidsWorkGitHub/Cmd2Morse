@@ -10,10 +10,24 @@ import static junit.framework.TestCase.assertEquals;
 public class MorseTranslatorTest {
 
     @Test
-    public void translate() throws Exception {
+    public void translateValidChar() throws Exception {
         Translator a = new MorseTranslator();
         String text = "ABCDEFG";
         assertEquals(".- -... -.-. -.. . ..-. --.", a.translate(text));
+    }
+
+    @Test
+    public void translateEmptyInvalidChar() throws Exception {
+        Translator a = new MorseTranslator();
+        String text = "£";
+        assertEquals("N/A ", a.translate(text));
+    }
+
+    @Test
+    public void translateNotEmptyInvalidChar() throws Exception {
+        Translator a = new MorseTranslator();
+        String text = "£££";
+        assertEquals("N/A N/A N/A ", a.translate(text));
     }
 
     @Test

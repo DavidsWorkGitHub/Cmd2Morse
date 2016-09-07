@@ -12,7 +12,6 @@ public class MorseTranslator implements Translator {
 
     /**
      * Translate a string of text into Morse Code
-     *
      * @param source the string to translate
      * @return the translated string
      */
@@ -26,15 +25,25 @@ public class MorseTranslator implements Translator {
 
             char current = source.toUpperCase().charAt(i);
 
-            // loop through the entire array of characters to find the source character
-            for (int j = 0; j < arrayOfChars1.getArrayLength(); j++) {
+            // if the char is an alphanumeric, enter this loop
+            if (Character.toString(current).matches("[A-Z0-9]")) {
 
-                if (translatedMorseCode.isEmpty() && current == arrayOfChars1.getCharacter(j)) {
-                    translatedMorseCode = arrayOfChars1.getMorseCode(j);
+                for (int j = 0; j < arrayOfChars1.getArrayLength(); j++) {
 
-                } else if (current == arrayOfChars1.getCharacter(j)) {
-                    translatedMorseCode = translatedMorseCode + " " + arrayOfChars1.getMorseCode(j);
+                    if (translatedMorseCode.isEmpty() && current == arrayOfChars1.getCharacter(j)) {
+                        translatedMorseCode = arrayOfChars1.getMorseCode(j);
+
+                    } else if (current == arrayOfChars1.getCharacter(j)) {
+                        translatedMorseCode = translatedMorseCode + " " + arrayOfChars1.getMorseCode(j);
+                    }
+
                 }
+            }
+            else if (translatedMorseCode.isEmpty()) {
+                translatedMorseCode = "N/A ";
+            }
+            else {
+                translatedMorseCode = translatedMorseCode + "N/A ";
             }
         }
         return translatedMorseCode;
@@ -42,7 +51,6 @@ public class MorseTranslator implements Translator {
 
     /**
      * Get the original untranslated string
-     *
      * @return the original String
      */
     public String getSourceText() {
@@ -52,22 +60,25 @@ public class MorseTranslator implements Translator {
 
     /**
      * Get a character at an index in the translated string
-     *
      * @param index the index of the character to retrieve
      * @return the translated character
-     * @throws IndexOutOfBoundsException
+     * @throws IndexOutOfBoundsException thrown if index specified is less than 0 or more than the length of chars
      */
     public String getTranslatedCharacterAt(int index) throws IndexOutOfBoundsException {
 
-        String a = "";
+        String charReturned = "";
+
+        char current = getSourceText().charAt(index);
+
         for (int i = 0; i < arrayOfChars1.getArrayLength(); i++) {
 
-            if (getSourceText().charAt(index) == arrayOfChars1.getCharacter(index)) {
-                a = arrayOfChars1.CharacterMorseCodeReturned(getSourceText().charAt(index));
+            if (current == arrayOfChars1.toString().charAt(i)) {
+                charReturned = arrayOfChars1.CharacterMorseCodeReturned(getSourceText().charAt(index));
+                break;
             } else {
-                a = "untranslateable";
+                charReturned = "untranslatable";
             }
         }
-        return a;
+        return charReturned;
     }
 }
