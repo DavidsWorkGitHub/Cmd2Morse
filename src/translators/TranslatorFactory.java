@@ -3,6 +3,7 @@ package translators;
 /**
  * Factory with enumerated type for correct translator to be selected.
  * Author: Dane Griffiths
+ * Updated By David Powell on 07/09/16
  * Date created: 05/09/16.
  */
 public class TranslatorFactory {
@@ -14,7 +15,6 @@ public class TranslatorFactory {
     }
 
     private TranslatorFactory() {
-
     }
 
     public static TranslatorFactory getInstance() {
@@ -37,17 +37,16 @@ public class TranslatorFactory {
         switch (option) {
 
             case MORSE:
-
-                return new MorseTranslator();
+                return new MorseTranslator ();
 
             case UPPERCASE:
-                return new UpperCaseTranslator();
+                return new UpperCaseTranslator ();
 
             case LOWERCASE:
-                return new LowerCaseTranslator();
+                return new LowerCaseTranslator ();
 
             case NUMBER:
-                return new NumberTranslator();
+                return new NumberTranslator ();
 
             default:
                 return null;
