@@ -7,11 +7,20 @@ package translators;
  * Date created: 05/09/16.
  */
 public class TranslatorFactory {
-    private static TranslatorFactory instance = null;
+    private static TranslatorFactory instance ;
+
+    private TranslatorFactory(){
+
+    }
 
 
-    protected static TranslatorFactory getInstance() {
+    static {
         instance = new TranslatorFactory();
+
+    }
+
+    public static TranslatorFactory getInstance() {
+
 
         if (instance == null) {
             instance = new TranslatorFactory ();
